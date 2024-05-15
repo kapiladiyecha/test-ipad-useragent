@@ -5,8 +5,13 @@
         document.getElementById('platform').textContent = navigator.platform;
         document.getElementById('maxTouchPoints').textContent = navigator.maxTouchPoints;
         document.getElementById('useragent').textContent = navigator.userAgent;
-        document.getElementById('ipad').textContent = /(iPad)/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-        document.getElementById('safari').textContent = /^((?!chrome|andrid).)*safari/i.test(navigator.userAgent);
+        const ipad = /(iPad)/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        document.getElementById('ipad').textContent = ipad;
+        const safari = /^((?!chrome|andrid).)*safari/i.test(navigator.userAgent);
+        document.getElementById('safari').textContent = safari;
+
+
+        document.getElementById('redirected').textContent = ipad && safari ? 'Redirected' : 'Downloaded';
     }
 </script>
 
@@ -34,6 +39,11 @@
     <div id="safari">
 
     </div>
+
+    <br>
+
+<h2>File will be:</h2>
+<h1 id="redirected"></h1>
 
 </body>
 </html>
