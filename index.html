@@ -5,7 +5,7 @@
         document.getElementById('platform').textContent = navigator.platform;
         document.getElementById('maxTouchPoints').textContent = navigator.maxTouchPoints;
         document.getElementById('useragent').textContent = navigator.userAgent;
-        document.getElementById('ipad').textContent = navigator.userAgent.match(/(iPad)/) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        document.getElementById('ipad').textContent = /(iPad)/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
         document.getElementById('safari').textContent = /^((?!chrome|andrid).)*safari/i.test(navigator.userAgent);
     }
 </script>
