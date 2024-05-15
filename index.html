@@ -1,0 +1,39 @@
+<html>
+<head>
+<script>
+    window.onload = () => {
+        document.getElementById('platform').textContent = navigator.platform;
+        document.getElementById('maxTouchPoints').textContent = navigator.maxTouchPoints;
+        document.getElementById('useragent').textContent = navigator.userAgent;
+        document.getElementById('ipad').textContent = navigator.userAgent.match(/(iPad)/) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        document.getElementById('safari').textContent = /^((?!chrome|andrid).)*safari/i.test(navigator.userAgent);
+    }
+</script>
+
+</head>
+
+<body>
+    <h2>navigator.platform:</h2>
+    <div id="platform">
+    </div>
+
+    <h2>navigator.maxTouchPoints:</h2>
+    <div id="maxTouchPoints">
+    </div>
+
+
+    <h2>useragent:</h2>
+    <div id="useragent">
+    </div>
+
+    <h2>iPad:</h2>
+    <div id="ipad">
+    </div>
+
+    <h2>safari:</h2>
+    <div id="safari">
+
+    </div>
+
+</body>
+</html>
